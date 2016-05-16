@@ -19,23 +19,22 @@ void leelinea(char *s){
 	} while (s[0]=='\0');
 }
 
-int main(){
-    char ficheroGrises[MAXLONG];
-    char ficheroImagen[MAXLONG];
+int main(int argc, char * argv[]){
+    char * ficheroGrises = argv[2];
+    char * ficheroImagen= argv[1];
     Imagen origen;
     Lista celdas;
-
-	cout << "Introduzca nombre de la imagen: ";
-	leelinea(ficheroImagen);
+	
+	if(argc!=2){
+		cout << "Introduzca nombre de la imagen y fichero de grises por parametro."<<endl;
+	}
+	
 
     // Leer la imagen desde fichero
     if (!origen.leerImagen(ficheroImagen)){
 		cerr << "Error leyendo imagen " << ficheroImagen << endl;
 		return 1;
     }
-	
-	cerr << "Introduzca el nombre de fichero con el conjunto de caracteres para realizar la conversion: ";
-	leelinea(ficheroGrises);
 	
 	// Leer cadenas desde fichero
 	if (celdas.leerLista(ficheroGrises)){	
@@ -48,10 +47,8 @@ int main(){
 			cerr << "La conversion no ha sido posible" << endl;
 			cerr << endl;
 		}
-		celdas.destruir(); // liberar memoria listas
 	}else{
 		cerr << "Error lista de grises " << ficheroGrises << endl;
 	}
-    origen.destruir();   // liberar memoria imagen
 
 }
