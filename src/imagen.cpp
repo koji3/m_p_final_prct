@@ -36,6 +36,25 @@ Imagen &Imagen::operator=(const Imagen &img){
     for(int x=0; x<nfilas*ncolumnas; x++){
     	setPos(x, img.getPos(x));
     }
+    return *this;
+}
+
+Imagen Imagen::operator+(Imagen b){
+	Imagen *nueva= new Imagen(this->columnas()+b.columnas(),max(this->filas(),b.filas()));
+	for(int f=0; f<this->filas(); f++){
+		for(int c=0; c<this->columnas(); c++){
+			nueva->set(f,c,this->get(f,c));
+		}
+	}
+	
+	for(int f=0; f<b.filas(); f++){
+		for(int c=0; c<b.columnas(); c++){
+			nueva->set(f,c+this->columnas()+1,b.get(f,c));
+			cerr << this->columnas()+1 << endl;
+		}
+	}
+	
+	return *nueva;
 }
 
 int Imagen::filas()const{
@@ -48,6 +67,7 @@ int Imagen::columnas()const{
 
 void Imagen::set(int y, int x, byte v){
     datos[(y*ncolumnas)+x]=v;
+    cerr << "SET: " << x << " " << y << endl ;
 }
 
 byte Imagen::get(int y, int x){

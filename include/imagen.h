@@ -22,7 +22,7 @@ public:
 	~Imagen();
 	Imagen(const Imagen&);
 	Imagen& operator=(const Imagen &img);
-	
+	Imagen operator+(Imagen b);
 	
 /**
 @brief Construye una imagen negra de tamaño @a filas x @a columnas
