@@ -29,7 +29,23 @@ Lista::Lista(string valor){
 	cabecera->siguiente=nueva;
 	num_elementos=1;
 }
+
+//SOBRECARGA OPERADOR +
 	
+lista& operator +(const lista &l1,const string &s1)
+{
+	lista milista = l1;
+  while(l1.siguiente != NULL){
+	milista = milista.siguiente;  
+	}
+	
+	Celda *nueva = new Celda();
+	nueva->datos = s1;
+	nueva->siguiente = NULL;
+	milista.siguiente = nueva;
+	this->num_elementos++;
+	return milista;
+}
 
 void Lista::destruir(){
 	if(cabecera!=0){
@@ -46,7 +62,7 @@ void Lista::destruir(){
 		cabecera=0;
 		num_elementos=0;
 	}
-}  
+}
 
 void Lista::insertar(string valor){
 	Celda *nueva=new Celda;
