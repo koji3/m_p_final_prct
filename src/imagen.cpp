@@ -22,12 +22,27 @@ Imagen::Imagen(int filas, int columnas){
     crear(filas,columnas);
 }
 
+Imagen::Imagen(const Imagen& img){
+    this->datos=0;
+    this->crear(img.filas(),img.columnas());
+    for(int x=0; x<nfilas*ncolumnas; x++){
+    	this->setPos(x, img.getPos(x));
+    }
+}
 
-int Imagen::filas(){
+Imagen &Imagen::operator=(const Imagen &img){
+	destruir();
+	crear(img.filas(),img.columnas());
+    for(int x=0; x<nfilas*ncolumnas; x++){
+    	setPos(x, img.getPos(x));
+    }
+}
+
+int Imagen::filas()const{
     return nfilas;
 }
 
-int Imagen::columnas(){
+int Imagen::columnas()const{
     return ncolumnas;
 }
 
@@ -43,7 +58,7 @@ void Imagen::setPos(int i, byte v){
     datos[i]=v;
 }
 
-byte Imagen::getPos(int i){
+byte Imagen::getPos(int i)const{
     return datos[i];
 }
 
