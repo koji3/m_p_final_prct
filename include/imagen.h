@@ -18,9 +18,12 @@ private:
    int ncolumnas;		///< número de columnsa de la imagen
 public:
 /// Construye una imagen vacía (0 filas, 0 columnas)
-   Imagen(); 
+    Imagen(); 
 	~Imagen();
-
+	Imagen(const Imagen&);
+	Imagen& operator=(const Imagen &img);
+	
+	
 /**
 @brief Construye una imagen negra de tamaño @a filas x @a columnas
 @param filas 	número de filas de la imagen
@@ -47,14 +50,14 @@ sus elementos a 0.
 @brief Devuelve el número de filas de las imagen
 @return el número de filas de la imagen
 */
-   int filas(); 
+   int filas() const; 
 
    
 /**
 @brief Devuelve el número de columnas de las imagen
 @return el número de columnas de la imagen
 */
-   int columnas(); 
+   int columnas() const; 
    
 
 /**
@@ -103,7 +106,7 @@ Devuelve el valor de la posición @a i de la imagen considerada como vector. La 
 corresponde con la posición @c y * @c ncolumnas + @c x de la imagen donde @c y representa la 
 fila y @c x representa la columna.    
 */
-   byte getPos(int i);
+   byte getPos(int i) const;
 
    
 /**
