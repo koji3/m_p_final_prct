@@ -4,44 +4,41 @@
 
 using namespace std;
 
-int main(){
+int main(int argc, char * argv[]){
+	
+	if(argc!=5){
+		cerr << "Uso: " << argv[0] << " imagen1.pgm imagen2.pgm img_out.pgm (t|b)" << endl ;
+		return 1;
+	}
+	
+	bool esBinario;
+	if(*argv[4]=='b')
+		esBinario=true;
+	else
+		esBinario=false;
+	
     Imagen origen;
-    Imagen destino(150,200);
-	
-	// Crear un degradado en la imagen destino
-    for (int i=0; i < destino.filas()*destino.columnas(); i++)
-		   destino.setPos(i, i%destino.columnas()+20);
-	   
-	// Guardar la imagen destino en el fichero degradado.pgm (formato texto)
-	if (destino.escribirImagen("degradado.pgm", false)){
-		// si todo va bien
-		cout << "degradado.pgm guardado correctamente \n";
-	} else { // si error
-		cerr << "Error guardando la imagen degradado.pgm\n";
+    Imagen destino;
+    
+	if (!destino.leerImagen(argv[1])){
+		cerr << "error leyendo  "<< argv[1] << "\n";
 		return 1;
 	}
 	
-	// Leer la imagen lena.pgm (formato texto)
-	if (!origen.leerImagen("imagenes/lena.pgm")){
-		cerr << "error leyendo imagenes/lena.pgm\n";
+	if (!origen.leerImagen(argv[2])){
+		cerr << "error leyendo  "<< argv[2] << "\n";
 		return 1;
 	}
-	
-	// Recortar un trozo de la imagen origen
-	destino.crear(40,90);
-	for (int i=0; i < destino.filas(); i++)
-		for (int j=0; j < destino.columnas(); j++)
-			destino.set(i, j, origen.get(i+110,j+100));
-		
-		
 
-	Imagen destino2 = destino+origen;
-	// Guardar la imagen destino en el fichero trozo.pgm (formato texto)
-	if (destino2.escribirImagen("trozo.pgm", false)){
+//	Imagen gato;
+//	gato.leerImagen("imagenes/gato.pgm");
+	Imagen destino2 = destino+origen;//+gato+origen+origen+destino;
+	// Guardar la imagen destino en el fichero 
+	if (destino2.escribirImagen(argv[3], esBinario)){
 		// si todo va bien
-		cout << "trozo.pgm guardado correctamente \n";
+		cout << argv[3] << " guardado correctamente \n";
 	} else { // si error
-		cerr << "Error guardando la imagen trozo.pgm\n";
+		cerr << "Error guardando la imagen " << argv[3] << "\n";
 		return 1;
 	}	
 	

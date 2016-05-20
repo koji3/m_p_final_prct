@@ -13,7 +13,9 @@ typedef unsigned char byte; ///< byte = 8bits almacenado en un unsigned char
 */
 class Imagen{
 private:
-   byte * datos;///< puntero a los datos de la imagen
+   byte ** matriz;
+   byte ** ptrfilas;///< puntero a los punteros de las filas 
+   byte * datos; ///< puntero a los punteros de las filas 
    int nfilas; 			///< número de filas de la imagen
    int ncolumnas;		///< número de columnsa de la imagen
 public:

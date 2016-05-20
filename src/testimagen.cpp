@@ -35,9 +35,8 @@ int main(){
 		
 		
 
-	Imagen destino2(destino);
 	// Guardar la imagen destino en el fichero trozo.pgm (formato texto)
-	if (destino2.escribirImagen("trozo.pgm", false)){
+	if (destino.escribirImagen("trozo.pgm", false)){
 		// si todo va bien
 		cout << "trozo.pgm guardado correctamente \n";
 	} else { // si error

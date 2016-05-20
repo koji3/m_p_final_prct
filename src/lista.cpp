@@ -30,29 +30,44 @@ Lista::Lista(string valor){
 	num_elementos=1;
 }
 
-//SOBRECARGA OPERADOR +
-	
-lista& operator +(const lista &l1,const string &s1)
-{
-	lista milista = l1;
-  while(l1.siguiente != NULL){
-	milista = milista.siguiente;  
-	}
-	
-	Celda *nueva = new Celda();
-	nueva->datos = s1;
-	nueva->siguiente = NULL;
-	milista.siguiente = nueva;
-	this->num_elementos++;
-	return milista;
-}
+//Lista::Lista(const Lista &l1){
+//	Lista milista = new Lista(l1->cabecera->datos);
+//	Celda * aux = l1->cabecera;
+//	while(aux.siguiente != NULL){
+//		aux = aux->siguiente;  
+//	}
+//	
+//	Celda *nueva = new Celda();
+//	nueva->datos = s1;
+//	nueva->siguiente = NULL;
+//	milista.siguiente = nueva;
+//	this->num_elementos++;
+//	return milista;
+//}
+
+////SOBRECARGA OPERADOR +
+//	
+//Lista& operator +(const Lista &l1,const string &s1)
+//{
+//	Lista milista = new Lista(l1);
+//	Celda * aux = l1->cabecera;
+//	while(aux.siguiente != NULL){
+//		aux = aux->siguiente;  
+//	}
+//	
+//	Celda *nueva = new Celda();
+//	nueva->datos = s1;
+//	nueva->siguiente = NULL;
+//	milista.siguiente = nueva;
+//	this->num_elementos++;
+//	return milista;
+//}
 
 void Lista::destruir(){
 	if(cabecera!=0){
 		Celda *actual=cabecera;
 		while(actual->siguiente!=0){
 			Celda *sig = actual->siguiente;
-			cerr << actual << "  " << actual->datos << " " << actual->siguiente << endl;
 			delete actual;
 			actual=sig;
 		

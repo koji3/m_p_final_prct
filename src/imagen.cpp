@@ -15,15 +15,21 @@ Imagen::Imagen(){
     ncolumnas=0;
     nfilas=0;
     datos=0;
+    ptrfilas=0;
+    matriz=0;
 }
 
 Imagen::Imagen(int filas, int columnas){
     datos=0;
+    ptrfilas=0;
+    matriz=0;
     crear(filas,columnas);
 }
 
 Imagen::Imagen(const Imagen& img){
     this->datos=0;
+    this->ptrfilas=0;
+    this->matriz=0;
     this->crear(img.filas(),img.columnas());
     for(int x=0; x<nfilas*ncolumnas; x++){
     	this->setPos(x, img.getPos(x));
@@ -40,20 +46,18 @@ Imagen &Imagen::operator=(const Imagen &img){
 }
 
 Imagen Imagen::operator+(Imagen b){
-	Imagen *nueva= new Imagen(this->columnas()+b.columnas(),max(this->filas(),b.filas()));
+	Imagen *nueva= new Imagen(max(this->filas(),b.filas()),this->columnas()+b.columnas());
 	for(int f=0; f<this->filas(); f++){
 		for(int c=0; c<this->columnas(); c++){
 			nueva->set(f,c,this->get(f,c));
 		}
 	}
-	
+
 	for(int f=0; f<b.filas(); f++){
 		for(int c=0; c<b.columnas(); c++){
-			nueva->set(f,c+this->columnas()+1,b.get(f,c));
-			cerr << this->columnas()+1 << endl;
+			nueva->set(f,c+this->columnas(),b.get(f,c));
 		}
 	}
-	
 	return *nueva;
 }
 
@@ -66,12 +70,12 @@ int Imagen::columnas()const{
 }
 
 void Imagen::set(int y, int x, byte v){
-    datos[(y*ncolumnas)+x]=v;
-    cerr << "SET: " << x << " " << y << endl ;
+    ptrfilas[y][x]=v;
 }
 
 byte Imagen::get(int y, int x){
-    return datos[(y*ncolumnas)+x];
+
+    return ptrfilas[y][x];
 }
 
 void Imagen::setPos(int i, byte v){
@@ -86,7 +90,12 @@ void Imagen::crear(int filas, int columnas){
     if(datos!=0){ destruir(); }
     this->nfilas = filas;
     this->ncolumnas = columnas;
+    ptrfilas=new byte*[filas];
+    matriz=&ptrfilas[0];
     datos=new byte[filas*columnas];
+    for(int f=0; f<filas;f++){
+    	ptrfilas[f]=&datos[ncolumnas*f];
+    }
     for(int i=0;i<filas*columnas;i++){ 
         datos[i] = 0;
     }
@@ -179,10 +188,12 @@ bool Imagen::listaAArteASCII(const Lista &celdas){
 }
 
 void Imagen::destruir(){
-	if(datos!=0){ delete [] datos; }
+	if(datos!=0){ delete [] datos; delete [] ptrfilas; }
 	ncolumnas=0;
 	datos=0;
 	nfilas=0;
+    ptrfilas=0;
+    matriz=0;
 }
 
 Imagen::~Imagen(){
