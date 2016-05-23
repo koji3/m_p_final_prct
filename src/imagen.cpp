@@ -15,21 +15,17 @@ Imagen::Imagen(){
     ncolumnas=0;
     nfilas=0;
     datos=0;
-    ptrfilas=0;
-    matriz=0;
 }
 
 Imagen::Imagen(int filas, int columnas){
     datos=0;
-    ptrfilas=0;
-    matriz=0;
-    crear(filas,columnas);
+    if(filas>=0 && columnas>=0){
+	    crear(filas,columnas);
+	}
 }
 
 Imagen::Imagen(const Imagen& img){
     this->datos=0;
-    this->ptrfilas=0;
-    this->matriz=0;
     this->crear(img.filas(),img.columnas());
     for(int x=0; x<nfilas*ncolumnas; x++){
     	this->setPos(x, img.getPos(x));
@@ -37,10 +33,12 @@ Imagen::Imagen(const Imagen& img){
 }
 
 Imagen &Imagen::operator=(const Imagen &img){
-	destruir();
-	crear(img.filas(),img.columnas());
-    for(int x=0; x<nfilas*ncolumnas; x++){
-    	setPos(x, img.getPos(x));
+	if(&img!=this){
+		destruir();
+		crear(img.filas(),img.columnas());
+		for(int x=0; x<nfilas*ncolumnas; x++){
+			setPos(x, img.getPos(x));
+		}
     }
     return *this;
 }
@@ -70,34 +68,44 @@ int Imagen::columnas()const{
 }
 
 void Imagen::set(int y, int x, byte v){
-    ptrfilas[y][x]=v;
+	if(y<filas() && x<columnas()){
+		datos[y][x]=v;
+	}else{
+		cerr << "Acceso fuera de los límites del vector" << endl;
+		exit(1);
+	}
 }
 
 byte Imagen::get(int y, int x){
-
-    return ptrfilas[y][x];
+    return datos[y][x];
 }
 
 void Imagen::setPos(int i, byte v){
-    datos[i]=v;
+	if(i<filas()*columnas()){
+		datos[0][i]=v;
+	}else{
+		cerr << "Acceso fuera de los límites del vector" << endl;
+		exit(1);
+	}
 }
 
 byte Imagen::getPos(int i)const{
-    return datos[i];
+    return datos[0][i];
 }
 
 void Imagen::crear(int filas, int columnas){
     if(datos!=0){ destruir(); }
     this->nfilas = filas;
     this->ncolumnas = columnas;
-    ptrfilas=new byte*[filas];
-    matriz=&ptrfilas[0];
-    datos=new byte[filas*columnas];
+    datos=new byte*[filas];
+    datos[0]=new byte[filas*columnas];
     for(int f=0; f<filas;f++){
-    	ptrfilas[f]=&datos[ncolumnas*f];
+    	datos[f]=&datos[0][(f*ncolumnas)];
     }
-    for(int i=0;i<filas*columnas;i++){ 
-        datos[i] = 0;
+    for(int f=0;f<filas;f++){ 
+        for(int c=0;c<columnas;c++){ 
+	        datos[f][c] = 0;
+    	}
     }
 }
 
@@ -106,11 +114,11 @@ void Imagen::crear(int filas, int columnas){
      TipoImagen tipo = infoPGM(nombreFichero,f,c);
      this->crear(f,c); 
      if(tipo==IMG_PGM_BINARIO){
-         leerPGMBinario(nombreFichero,datos,this->nfilas,this->ncolumnas);
+         leerPGMBinario(nombreFichero,datos[0],this->nfilas,this->ncolumnas);
          return true;
      }else{
      	 if(tipo==IMG_PGM_TEXTO){
-		     leerPGMTexto(nombreFichero,datos,f,c);
+		     leerPGMTexto(nombreFichero,datos[0],f,c);
 		     return true;
 	     }
      }
@@ -121,9 +129,9 @@ void Imagen::crear(int filas, int columnas){
  
 bool Imagen::escribirImagen(const char nombreFichero[], bool esBinario){
 	if(esBinario){
-    	return escribirPGMBinario(nombreFichero, datos, nfilas, ncolumnas);
+    	return escribirPGMBinario(nombreFichero, datos[0], nfilas, ncolumnas);
     }else{
-    	return escribirPGMTexto(nombreFichero, datos, nfilas, ncolumnas);
+    	return escribirPGMTexto(nombreFichero, datos[0], nfilas, ncolumnas);
     }
 }
 
@@ -150,7 +158,7 @@ bool Imagen::aArteASCII(const char grises[], char arteASCII[], int maxlong){
 		int indice=0;
 		for(int y=0; y<nfilas; y++){
 			for(int x=0; x<ncolumnas; x++){
-				arteASCII[indice]=grises[(datos[(y*ncolumnas)+x]*ncaracteres)/256];
+				arteASCII[indice]=grises[(datos[0][(y*ncolumnas)+x]*ncaracteres)/256];
 				indice++;
 			}
 			arteASCII[indice]='\n';
@@ -188,12 +196,13 @@ bool Imagen::listaAArteASCII(const Lista &celdas){
 }
 
 void Imagen::destruir(){
-	if(datos!=0){ delete [] datos; delete [] ptrfilas; }
+	if(datos!=0){ 
+		delete [] datos[0];
+		delete [] datos;
+	}
 	ncolumnas=0;
 	datos=0;
 	nfilas=0;
-    ptrfilas=0;
-    matriz=0;
 }
 
 Imagen::~Imagen(){
