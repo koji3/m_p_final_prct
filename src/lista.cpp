@@ -7,10 +7,18 @@ using namespace std;
 
 
 Lista::Lista(){
-	cabecera=new Celda;
-	cabecera->datos="";
-	cabecera->siguiente=0;
-	num_elementos=0;
+	cabecera = 0;
+	num_elementos = 0;
+}
+//CONSTRUCTOR DE COPIA
+Lista::Lista(const Lista& otra){
+	
+	Celda *aux = cabecera;
+	while(otra != 0){
+		aux.insertar(otra.datos);
+		aux = aux->siguiente;
+		otra = otra->siguiente; 
+	}
 }
 
 Lista::~Lista(){
@@ -21,46 +29,44 @@ Lista::~Lista(){
    
 Lista::Lista(string valor){
 	cabecera=new Celda;
-	cabecera->datos="";
-	
-	Celda *nueva=new Celda();
-	nueva->datos=valor;
-	nueva->siguiente=0;
-	cabecera->siguiente=nueva;
+	cabecera->datos = valor;
+	cabecera->siguiente = 0;
 	num_elementos=1;
 }
+//SOBRECARGA OPERADOR =
+
+Lista &Lista::operator=(const Lista &otra){
+	Celda * aux = this->cabecera;
+	while(otra != null){
+		aux.insertar(otra.datos);
+		aux = aux->siguiente;
+		otra = otra->siguiente;
+		this->num_elementos++;
+	}
+	return *this;
+}
+
 
 //SOBRECARGA OPERADOR +
 	
-lista& operator +(const lista &l1,const string &s1)
+Lista& Lista::operator +(const lista &l1,const string &s1)
 {
-	lista milista = l1;
-  while(l1.siguiente != NULL){
-	milista = milista.siguiente;  
-	}
 	
-	Celda *nueva = new Celda();
-	nueva->datos = s1;
-	nueva->siguiente = NULL;
-	milista.siguiente = nueva;
-	this->num_elementos++;
-	return milista;
+	Lista ultima = new Lista(l1);
+	ultima.insertar(s1);
+	return ultima;
 }
 
 void Lista::destruir(){
 	if(cabecera!=0){
-		Celda *actual=cabecera;
-		while(actual->siguiente!=0){
-			Celda *sig = actual->siguiente;
-			cerr << actual << "  " << actual->datos << " " << actual->siguiente << endl;
-			delete actual;
-			actual=sig;
-		
+		Celda * aux = this->cabecera;
+		while(aux!=0){
+			delete [] aux;
+			aux = aux->siguiente;
 		}
-		//cerr << actual << "  " << actual->datos << " " << actual->siguiente << endl;
-		delete actual;
-		cabecera=0;
-		num_elementos=0;
+	}
+		this->cabecera = 0;
+		this->num_elementos = 0;
 	}
 }
 
