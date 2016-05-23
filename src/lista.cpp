@@ -36,14 +36,8 @@ Lista::Lista(string valor){
 //SOBRECARGA OPERADOR =
 
 Lista &Lista::operator=(const Lista &otra){
-	Celda * aux = this->cabecera;
-	while(otra != null){
-		aux.insertar(otra.datos);
-		aux = aux->siguiente;
-		otra = otra->siguiente;
-		this->num_elementos++;
-	}
-	return *this;
+	Lista ultima = new Lista(otra); 
+	return *ultima;
 }
 
 
@@ -54,7 +48,7 @@ Lista& Lista::operator +(const lista &l1,const string &s1)
 	
 	Lista ultima = new Lista(l1);
 	ultima.insertar(s1);
-	return ultima;
+	return *ultima;
 }
 
 void Lista::destruir(){
