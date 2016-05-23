@@ -25,8 +25,9 @@ int main(int argc, char * argv[]){
     Imagen origen;
     Lista celdas;
 	
-	if(argc!=2){
+	if(argc!=3){
 		cout << "Introduzca nombre de la imagen y fichero de grises por parametro."<<endl;
+		return 1;
 	}
 	
 
@@ -35,20 +36,21 @@ int main(int argc, char * argv[]){
 		cerr << "Error leyendo imagen " << ficheroImagen << endl;
 		return 1;
     }
-	
+
 	// Leer cadenas desde fichero
 	if (celdas.leerLista(ficheroGrises)){	
-		// realizar las conversiones
+		// realizar las conversiones 
 		if (origen.listaAArteASCII(celdas)){
 			cerr << "Exito en la conversion." << endl;
 			cerr << "Chequee los ficheros asciiX.txt" << endl;
-			cerr << endl;
 		}else{
 			cerr << "La conversion no ha sido posible" << endl;
 			cerr << endl;
+			return 1;
 		}
 	}else{
 		cerr << "Error lista de grises " << ficheroGrises << endl;
+		return 1;
 	}
 
 }

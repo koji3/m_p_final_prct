@@ -29,7 +29,7 @@ public:
    Lista(); 
    ~Lista();
    
-
+Lista(const Lista&);
 /**
 * @brief Construye una lista a partir de un elemento
 * @param cadena el elemento a insertar en la lista
@@ -84,6 +84,10 @@ int longitud() const;
  * determinado, y se ha de crear la lista con el numero de elementos que contenga. 
  */
 bool leerLista(const char nombrefichero[]);
+
+Lista& operator=(const Lista &otra);
+
+Lista& operator +(const string &s1);
 
 };
 

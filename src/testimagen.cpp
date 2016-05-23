@@ -34,7 +34,6 @@ int main(){
 			destino.set(i, j, origen.get(i+110,j+100));
 		
 
-
 	// Guardar la imagen destino en el fichero trozo.pgm (formato texto)
 	if (destino.escribirImagen("trozo.pgm", false)){
 		// si todo va bien

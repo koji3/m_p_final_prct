@@ -34,7 +34,7 @@ Imagen::Imagen(const Imagen& img){
 
 Imagen &Imagen::operator=(const Imagen &img){
 	if(&img!=this){
-		destruir();
+		if(datos!=0){ destruir(); }
 		crear(img.filas(),img.columnas());
 		for(int x=0; x<nfilas*ncolumnas; x++){
 			setPos(x, img.getPos(x));
@@ -77,7 +77,12 @@ void Imagen::set(int y, int x, byte v){
 }
 
 byte Imagen::get(int y, int x){
-    return datos[y][x];
+	if(y<filas() && x<columnas()){
+		return datos[y][x];
+	}else{
+		cerr << "Acceso fuera de los límites del vector" << endl;
+		exit(1);
+	}
 }
 
 void Imagen::setPos(int i, byte v){
@@ -90,7 +95,12 @@ void Imagen::setPos(int i, byte v){
 }
 
 byte Imagen::getPos(int i)const{
-    return datos[0][i];
+	if(i<filas()*columnas()){
+		return datos[0][i];
+	}else{
+		cerr << "Acceso fuera de los límites del vector" << endl;
+		exit(1);
+	}
 }
 
 void Imagen::crear(int filas, int columnas){
@@ -109,23 +119,34 @@ void Imagen::crear(int filas, int columnas){
     }
 }
 
- bool Imagen::leerImagen(const char nombreFichero[]){
-     int f, c;
-     TipoImagen tipo = infoPGM(nombreFichero,f,c);
-     this->crear(f,c); 
-     if(tipo==IMG_PGM_BINARIO){
-         leerPGMBinario(nombreFichero,datos[0],this->nfilas,this->ncolumnas);
-         return true;
-     }else{
-     	 if(tipo==IMG_PGM_TEXTO){
-		     leerPGMTexto(nombreFichero,datos[0],f,c);
-		     return true;
-	     }
-     }
-	
-	return false;
-     
- }
+bool Imagen::leerImagen(const char nombreFichero[]){
+	int f, c;
+	bool exito=false;
+	TipoImagen tipo = infoPGM(nombreFichero,f,c);
+	switch ( tipo ){
+		case IMG_PGM_BINARIO: 
+			this->crear(f,c); 
+			leerPGMBinario(nombreFichero,datos[0],f,c);
+			exito=true;
+			break;
+
+		case IMG_PGM_TEXTO: 
+			this->crear(f,c); 
+			leerPGMTexto(nombreFichero,datos[0],f,c);
+			exito=true;
+			break;
+		
+		case IMG_DESCONOCIDO:
+			exito=false;
+			break;
+		
+		default: 
+			exito=false;
+			break;
+	}
+	return exito;
+}
+
  
 bool Imagen::escribirImagen(const char nombreFichero[], bool esBinario){
 	if(esBinario){
@@ -137,16 +158,13 @@ bool Imagen::escribirImagen(const char nombreFichero[], bool esBinario){
 
 Imagen *Imagen::plano ( int k ){
     Imagen *aux= new Imagen(nfilas,ncolumnas);
-    //aux.crear;
     for(int y=0; y<nfilas*ncolumnas; y++){
     	bytaso::byte nuevo;
     	bytaso::apagar(nuevo);
         if(bytaso::get(getPos(y),k)){
             bytaso::on(nuevo,7);
-            
         }
         aux->setPos(y,nuevo);
-
     }
     return aux;
 }
@@ -171,23 +189,20 @@ bool Imagen::aArteASCII(const char grises[], char arteASCII[], int maxlong){
 }
 
 bool Imagen::listaAArteASCII(const Lista &celdas){
-	//const int TAM=100000;
     char * arteASCII= new char[nfilas*(ncolumnas+1)]; 
     bool exito=true;
 	for(int x=0; x<celdas.longitud(); x++){
 		string gris = celdas.getCelda(x);
 		const char *gris_char = gris.c_str();
-		//strcpy(gris_char, gris.c_str());
-		
 		if(this->aArteASCII(gris_char, arteASCII, nfilas*(ncolumnas+1))){
 		    	char nombre_aux[255]="";
-	    		ofstream fsalida;
+				ofstream fsalida;
 		    	sprintf(nombre_aux, "%s%d%s", "ascii",x,".txt");
 				fsalida.open(nombre_aux);
 				fsalida << arteASCII;
 				fsalida.close();
 			}else{
-				cout << "La conversión " << x << " no ha sido posible" << endl;  
+				//cout << "La conversión " << x << " no ha sido posible" << endl;  
 				exito= false;
 			}
 	}
