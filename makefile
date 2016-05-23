@@ -9,7 +9,7 @@ CXX = g++
 CPPFLAGS = -Wall -g -I$(INC) --pedantic -ansi --std=c++11 -O0
 
 
-all: $(BIN)/arteASCII $(BIN)/testarteASCII $(BIN)/testplano $(BIN)/testimagen $(BIN)/arteASCII2
+all: $(BIN)/arteASCII $(BIN)/testarteASCII $(BIN)/testplano $(BIN)/testimagen $(BIN)/arteASCII2 $(BIN)/suma
 
 $(BIN)/suma: $(SRC)/suma.cpp $(LIB)/libimagen.a 
 	$(CXX) $(CPPFLAGS) $(SRC)/suma.cpp $(LIB)/libimagen.a $(OBJ)/byte.o -o $(BIN)/suma
