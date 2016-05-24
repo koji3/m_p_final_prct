@@ -37,6 +37,17 @@ public:
 * Construye una lista de tamaño 1 e inserta la cadena @a cadena 
 */
    Lista(string cadena);
+
+//CONSTRUCTOR DE COPIA
+   Lista(const Lista& otra);
+
+
+//SOBRECARGA DE OPERADORES
+
+Lista &operator+(const string &s1);
+
+Lista &operator=(const Lista &otra);
+
 	
 /**
 * @brief Libera la memoria reservada en la lista de cadenas
