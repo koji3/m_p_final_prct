@@ -1,0 +1,281 @@
+\hypertarget{pgm_8h}{}\section{Referencia del Archivo include/pgm.h}
+\label{pgm_8h}\index{include/pgm.\+h@{include/pgm.\+h}}
+
+
+Fichero cabecera para la E/\+S de imágenes P\+G\+M.  
+
+
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{pgm_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} \{ \hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522eda23c8d70e6eadf2d0d0ee1fd3bb293384}{I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O}, 
+\hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522eda724f6134dce25e3d82af96f9061dd9de}{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O}, 
+\hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522eda2535c521166366e04b5091ef8acfcbde}{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O}
+ \}\begin{DoxyCompactList}\small\item\em Tipo de imagen. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} \hyperlink{pgm_8h_a85c7f15bdcdee461eba76965aaccb910}{info\+P\+G\+M} (const char nombre\mbox{[}$\,$\mbox{]}, int \&filas, int \&columnas)
+\begin{DoxyCompactList}\small\item\em Consulta el tipo de imagen del archivo y sus dimensiones. \end{DoxyCompactList}\item 
+bool \hyperlink{pgm_8h_a3d11aef73fef65e3ba31446f8fc20595}{leer\+P\+G\+M\+Binario} (const char nombre\mbox{[}$\,$\mbox{]}, unsigned char datos\mbox{[}$\,$\mbox{]}, int \&filas, int \&columnas)
+\begin{DoxyCompactList}\small\item\em Lee una imagen de tipo P\+G\+M binario. \end{DoxyCompactList}\item 
+bool \hyperlink{pgm_8h_a381cd69ce2e9de0b0e3b12131a397121}{escribir\+P\+G\+M\+Binario} (const char nombre\mbox{[}$\,$\mbox{]}, const unsigned char datos\mbox{[}$\,$\mbox{]}, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Escribe una imagen de tipo P\+G\+M binario. \end{DoxyCompactList}\item 
+bool \hyperlink{pgm_8h_ad0376e7bb607f570d680118ef291ee3d}{leer\+P\+G\+M\+Texto} (const char nombre\mbox{[}$\,$\mbox{]}, unsigned char datos\mbox{[}$\,$\mbox{]}, int \&filas, int \&columnas)
+\item 
+bool \hyperlink{pgm_8h_a0ecaed351740580902d90a4c496a0e3b}{escribir\+P\+G\+M\+Texto} (const char nombre\mbox{[}$\,$\mbox{]}, const unsigned char datos\mbox{[}$\,$\mbox{]}, int filas, int columnas)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero cabecera para la E/\+S de imágenes P\+G\+M. 
+
+Permite la E/\+S de archivos de tipos P\+G\+M 
+
+\subsection{Documentación de las enumeraciones}
+\hypertarget{pgm_8h_a8914f6544a484741b05c092d9e7522ed}{}\index{pgm.\+h@{pgm.\+h}!Tipo\+Imagen@{Tipo\+Imagen}}
+\index{Tipo\+Imagen@{Tipo\+Imagen}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{Tipo\+Imagen}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Tipo\+Imagen}}\label{pgm_8h_a8914f6544a484741b05c092d9e7522ed}
+
+
+Tipo de imagen. 
+
+Declara una serie de constantes para representar los distintos tipos de imágenes que se pueden manejar.
+
+\begin{DoxySeeAlso}{Ver también}
+Leer\+Tipo\+Imagen 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Valores de enumeraciones]\par
+\begin{description}
+\index{I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O@{I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O}!pgm.\+h@{pgm.\+h}}\index{pgm.\+h@{pgm.\+h}!I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O@{I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O}}\item[{\em 
+\hypertarget{pgm_8h_a8914f6544a484741b05c092d9e7522eda23c8d70e6eadf2d0d0ee1fd3bb293384}{}I\+M\+G\+\_\+\+D\+E\+S\+C\+O\+N\+O\+C\+I\+D\+O\label{pgm_8h_a8914f6544a484741b05c092d9e7522eda23c8d70e6eadf2d0d0ee1fd3bb293384}
+}]Tipo de imagen desconocido. \index{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O@{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O}!pgm.\+h@{pgm.\+h}}\index{pgm.\+h@{pgm.\+h}!I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O@{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O}}\item[{\em 
+\hypertarget{pgm_8h_a8914f6544a484741b05c092d9e7522eda724f6134dce25e3d82af96f9061dd9de}{}I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+B\+I\+N\+A\+R\+I\+O\label{pgm_8h_a8914f6544a484741b05c092d9e7522eda724f6134dce25e3d82af96f9061dd9de}
+}]\hyperlink{class_imagen}{Imagen} tipo P\+G\+M Binario. \index{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O@{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O}!pgm.\+h@{pgm.\+h}}\index{pgm.\+h@{pgm.\+h}!I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O@{I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O}}\item[{\em 
+\hypertarget{pgm_8h_a8914f6544a484741b05c092d9e7522eda2535c521166366e04b5091ef8acfcbde}{}I\+M\+G\+\_\+\+P\+G\+M\+\_\+\+T\+E\+X\+T\+O\label{pgm_8h_a8914f6544a484741b05c092d9e7522eda2535c521166366e04b5091ef8acfcbde}
+}]\hyperlink{class_imagen}{Imagen} tipo P\+G\+M Texto. \end{description}
+\end{Desc}
+
+
+\subsection{Documentación de las funciones}
+\hypertarget{pgm_8h_a381cd69ce2e9de0b0e3b12131a397121}{}\index{pgm.\+h@{pgm.\+h}!escribir\+P\+G\+M\+Binario@{escribir\+P\+G\+M\+Binario}}
+\index{escribir\+P\+G\+M\+Binario@{escribir\+P\+G\+M\+Binario}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{escribir\+P\+G\+M\+Binario(const char nombre[], const unsigned char datos[], int filas, int columnas)}]{\setlength{\rightskip}{0pt plus 5cm}bool escribir\+P\+G\+M\+Binario (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\mbox{[}$\,$\mbox{]}, }
+\item[{const unsigned char}]{datos\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{filas, }
+\item[{int}]{columnas}
+\end{DoxyParamCaption}
+)}\label{pgm_8h_a381cd69ce2e9de0b0e3b12131a397121}
+
+
+Escribe una imagen de tipo P\+G\+M binario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & nombre del archivo a escribir \\
+\hline
+{\em datos} & vector con {\itshape filas} x {\itshape columnas} bytes que corresponden a los valores de los píxeles de la imagen de grises. \\
+\hline
+{\em filas} & número de filas de la imagen \\
+\hline
+{\em columnas} & número de columnas de la imagen \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la escritura. \\
+\hline
+{\em false} & si se ha producido algún error en la escritura. \\
+\hline
+\end{DoxyRetVals}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_a381cd69ce2e9de0b0e3b12131a397121_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pgm_8h_a0ecaed351740580902d90a4c496a0e3b}{}\index{pgm.\+h@{pgm.\+h}!escribir\+P\+G\+M\+Texto@{escribir\+P\+G\+M\+Texto}}
+\index{escribir\+P\+G\+M\+Texto@{escribir\+P\+G\+M\+Texto}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{escribir\+P\+G\+M\+Texto(const char nombre[], const unsigned char datos[], int filas, int columnas)}]{\setlength{\rightskip}{0pt plus 5cm}bool escribir\+P\+G\+M\+Texto (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\mbox{[}$\,$\mbox{]}, }
+\item[{const unsigned char}]{datos\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{filas, }
+\item[{int}]{columnas}
+\end{DoxyParamCaption}
+)}\label{pgm_8h_a0ecaed351740580902d90a4c496a0e3b}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_a0ecaed351740580902d90a4c496a0e3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pgm_8h_a85c7f15bdcdee461eba76965aaccb910}{}\index{pgm.\+h@{pgm.\+h}!info\+P\+G\+M@{info\+P\+G\+M}}
+\index{info\+P\+G\+M@{info\+P\+G\+M}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{info\+P\+G\+M(const char nombre[], int \&filas, int \&columnas)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tipo\+Imagen} info\+P\+G\+M (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\mbox{[}$\,$\mbox{]}, }
+\item[{int \&}]{filas, }
+\item[{int \&}]{columnas}
+\end{DoxyParamCaption}
+)}\label{pgm_8h_a85c7f15bdcdee461eba76965aaccb910}
+
+
+Consulta el tipo de imagen del archivo y sus dimensiones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & indica el nombre del archivo de disco a consultar \\
+\hline
+{\em filas} & Parámetro de salida con las filas de la imagen. \\
+\hline
+{\em columnas} & Parámetro de salida con las columnas de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el tipo de la imagen en el archivo
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{pgm_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} 
+\end{DoxySeeAlso}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_a85c7f15bdcdee461eba76965aaccb910_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{pgm_8h_a85c7f15bdcdee461eba76965aaccb910_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pgm_8h_a3d11aef73fef65e3ba31446f8fc20595}{}\index{pgm.\+h@{pgm.\+h}!leer\+P\+G\+M\+Binario@{leer\+P\+G\+M\+Binario}}
+\index{leer\+P\+G\+M\+Binario@{leer\+P\+G\+M\+Binario}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{leer\+P\+G\+M\+Binario(const char nombre[], unsigned char datos[], int \&filas, int \&columnas)}]{\setlength{\rightskip}{0pt plus 5cm}bool leer\+P\+G\+M\+Binario (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned char}]{datos\mbox{[}$\,$\mbox{]}, }
+\item[{int \&}]{filas, }
+\item[{int \&}]{columnas}
+\end{DoxyParamCaption}
+)}\label{pgm_8h_a3d11aef73fef65e3ba31446f8fc20595}
+
+
+Lee una imagen de tipo P\+G\+M binario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & nombre del archivo a leer \\
+\hline
+{\em filas} & Parámetro de salida con las filas de la imagen. \\
+\hline
+{\em columnas} & Parámetro de salida con las columnas de la imagen. \\
+\hline
+{\em datos} & vector para obtener el valor de cada uno de los píxeles desde la esquina superior izqda a la inferior dcha. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la lectura. \\
+\hline
+{\em false} & si se ha producido algún error en la lectura. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyPrecond}{Precondición}
+datos debe tener tamaño suficiente para almacenar {\itshape filas} x {\itshape columnas} bytes de datos de la imagen. 
+\end{DoxyPrecond}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_a3d11aef73fef65e3ba31446f8fc20595_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_a3d11aef73fef65e3ba31446f8fc20595_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pgm_8h_ad0376e7bb607f570d680118ef291ee3d}{}\index{pgm.\+h@{pgm.\+h}!leer\+P\+G\+M\+Texto@{leer\+P\+G\+M\+Texto}}
+\index{leer\+P\+G\+M\+Texto@{leer\+P\+G\+M\+Texto}!pgm.\+h@{pgm.\+h}}
+\subsubsection[{leer\+P\+G\+M\+Texto(const char nombre[], unsigned char datos[], int \&filas, int \&columnas)}]{\setlength{\rightskip}{0pt plus 5cm}bool leer\+P\+G\+M\+Texto (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned char}]{datos\mbox{[}$\,$\mbox{]}, }
+\item[{int \&}]{filas, }
+\item[{int \&}]{columnas}
+\end{DoxyParamCaption}
+)}\label{pgm_8h_ad0376e7bb607f570d680118ef291ee3d}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_ad0376e7bb607f570d680118ef291ee3d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm_8h_ad0376e7bb607f570d680118ef291ee3d_icgraph}
+\end{center}
+\end{figure}
+
+

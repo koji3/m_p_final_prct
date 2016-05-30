@@ -47,7 +47,7 @@ public:
 	@param img	imagen a sumar
 	@return imagen suma
 	*/
-	Imagen operator+(Imagen img);
+	Imagen operator+(const Imagen img) const;
 	
 	/**
 	@brief Construye una imagen negra de tamaño @a filas x @a columnas
@@ -108,7 +108,7 @@ public:
 	como un vector, la posición (@a x,@a y) corresponde a la posición @a y * @c ncolumnas + @a x 
 	del vector.    
 	*/
-   byte get(int y, int x); 
+   byte get(int y, int x) const; 
    
    
 	/**

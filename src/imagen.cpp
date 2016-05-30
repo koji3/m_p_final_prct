@@ -43,20 +43,20 @@ Imagen &Imagen::operator=(const Imagen &img){
     return *this;
 }
 
-Imagen Imagen::operator+(Imagen b){
-	Imagen *nueva= new Imagen(max(this->filas(),b.filas()),this->columnas()+b.columnas());
+Imagen Imagen::operator+(const Imagen b) const{
+	Imagen nueva(max(this->filas(),b.filas()),this->columnas()+b.columnas());
 	for(int f=0; f<this->filas(); f++){
 		for(int c=0; c<this->columnas(); c++){
-			nueva->set(f,c,this->get(f,c));
+			nueva.set(f,c,this->get(f,c));
 		}
 	}
 
 	for(int f=0; f<b.filas(); f++){
 		for(int c=0; c<b.columnas(); c++){
-			nueva->set(f,c+this->columnas(),b.get(f,c));
+			nueva.set(f,c+this->columnas(),b.get(f,c));
 		}
 	}
-	return *nueva;
+	return nueva;
 }
 
 int Imagen::filas()const{
@@ -76,7 +76,7 @@ void Imagen::set(int y, int x, byte v){
 	}
 }
 
-byte Imagen::get(int y, int x){
+byte Imagen::get(int y, int x) const{
 	if(y<filas() && x<columnas()){
 		return datos[y][x];
 	}else{

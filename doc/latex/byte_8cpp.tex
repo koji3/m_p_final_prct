@@ -1,0 +1,37 @@
+\hypertarget{byte_8cpp}{}\section{Referencia del Archivo src/byte.cpp}
+\label{byte_8cpp}\index{src/byte.\+cpp@{src/byte.\+cpp}}
+{\ttfamily \#include \char`\"{}byte.\+h\char`\"{}}\\*
+Dependencia grÃ¡fica adjunta para byte.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{byte_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacebytaso}{bytaso}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacebytaso_ae98a18093e63134e5f1ddec44973c6ec}{bytaso\+::on} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \&b, int pos)
+\begin{DoxyCompactList}\small\item\em enciende el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a477a14f602dcc9264dbb6f874d170834}{bytaso\+::off} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \&b, int pos)
+\begin{DoxyCompactList}\small\item\em apaga el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} \end{DoxyCompactList}\item 
+bool \hyperlink{namespacebytaso_ad231ba96547f99130292527f5d65694b}{bytaso\+::get} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} b, int pos)
+\begin{DoxyCompactList}\small\item\em devuelve el estado del bit (encendido = true, apagado = false) en la posición {\ttfamily pos} \end{DoxyCompactList}\item 
+string \hyperlink{namespacebytaso_a01303edb3c075bbf9f10324914352a50}{bytaso\+::byte\+To\+String} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} b)
+\begin{DoxyCompactList}\small\item\em Muestra por la salida estándar una secuencia de 0s y 1s correspondiente al estado de cada bit. \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a29bc6fb2d3ca8a24ee9a8fc044aed54a}{bytaso\+::apagar} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \&b)
+\begin{DoxyCompactList}\small\item\em apaga todos los bits \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a5e016205a37415abe06efd845593bc2a}{bytaso\+::encender} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \&b)
+\begin{DoxyCompactList}\small\item\em enciende todos los bits \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_ae93ec524c1a740b4144a2ec249d07446}{bytaso\+::asignar} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \&b, const bool v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em enciende los bits según la configuración de {\ttfamily v} \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_aca892e499e255f8b8a967b67cd164a75}{bytaso\+::volcar} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} b, bool v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em recupera la configuración de todos los bit \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a76ad23326440e16a7b419ee7a14ee287}{bytaso\+::encendidos} (\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} b, int posic\mbox{[}$\,$\mbox{]}, int \&cuantos)
+\begin{DoxyCompactList}\small\item\em devuelve las posiciones de los bits encendidos \end{DoxyCompactList}\end{DoxyCompactItemize}

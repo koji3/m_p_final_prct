@@ -29,18 +29,20 @@ int main(int argc, char * argv[]){
 		cerr << "error leyendo  "<< argv[2] << "\n";
 		return 1;
 	}
+	
+
 
 //	Imagen gato;
 //	gato.leerImagen("imagenes/gato.pgm");
-	Imagen destino2 = destino+origen;//+gato+origen+origen+destino;
+	//Imagen destino2(destino+origen);//+gato+origen+origen+destino;
 	// Guardar la imagen destino en el fichero 
-	if (destino2.escribirImagen(argv[3], esBinario)){
+	if ((destino+origen).escribirImagen(argv[3], esBinario)){
 		// si todo va bien
 		cout << argv[3] << " guardado correctamente \n";
 	} else { // si error
 		cerr << "Error guardando la imagen " << argv[3] << "\n";
 		return 1;
 	}	
-	
+
 	return 0;
 }

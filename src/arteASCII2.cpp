@@ -10,20 +10,11 @@
 
 using namespace std;
 
-
-const int MAXLONG = 1000000;
-
-void leelinea(char *s){
-	do{
-		cin.getline(s, MAXLONG);
-	} while (s[0]=='\0');
-}
-
 int main(int argc, char * argv[]){
     char * ficheroGrises = argv[2];
     char * ficheroImagen= argv[1];
     Imagen origen;
-    Lista celdas;
+    Lista celdas, cel, c;
 	
 	if(argc!=3){
 		cout << "Introduzca nombre de la imagen y fichero de grises por parametro."<<endl;
@@ -40,7 +31,12 @@ int main(int argc, char * argv[]){
 	// Leer cadenas desde fichero
 	if (celdas.leerLista(ficheroGrises)){	
 		// realizar las conversiones 
-		if (origen.listaAArteASCII(celdas)){
+		cerr << "Exito en la conversion." << endl;
+		Lista l(celdas);
+		cerr << "Exito en la conversion." << endl;
+		c=l;
+		cerr << "Exito en la conversion." << endl;
+		if (origen.listaAArteASCII(c)){
 			cerr << "Exito en la conversion." << endl;
 			cerr << "Chequee los ficheros asciiX.txt" << endl;
 		}else{

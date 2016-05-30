@@ -12,10 +12,11 @@ Lista::Lista(){
 }
 //CONSTRUCTOR DE COPIA
 Lista::Lista(const Lista& otra){
+	cabecera = 0;
+	num_elementos = 0;
 	Celda *aux = otra.cabecera;
-	Lista *nueva = new Lista();
 	while(aux != 0){
-		nueva->insertar(aux->datos);
+		this->insertar(aux->datos);
 		aux = aux->siguiente;
 	}
 }
@@ -33,11 +34,13 @@ Lista::Lista(string valor){
 //SOBRECARGA OPERADOR =
 
 Lista &Lista::operator=(const Lista &otra){
-	destruir();
-	Celda *aux = otra.cabecera;
-	while(aux != 0){
-		this->insertar(aux->datos);
-		aux = aux->siguiente;
+	if(&otra!=this){
+		destruir();
+		Celda *aux = otra.cabecera;
+		while(aux != 0){
+			this->insertar(aux->datos);
+			aux = aux->siguiente;
+		}
 	}
 	return *this;
 }

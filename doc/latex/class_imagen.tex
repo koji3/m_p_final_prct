@@ -1,0 +1,689 @@
+\hypertarget{class_imagen}{}\section{Referencia de la Clase Imagen}
+\label{class_imagen}\index{Imagen@{Imagen}}
+
+
+Una imagen en blanco y negro. Cada píxel es un byte.  
+
+
+
+
+{\ttfamily \#include $<$imagen.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_imagen_ab2e649aa7a105155c7bfdb846abf0528}{Imagen} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. Crea un \hyperlink{class_imagen}{Imagen} vacía de 0 filas x 0 columnas. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}{$\sim$\+Imagen} ()
+\begin{DoxyCompactList}\small\item\em Libera la memoria reservada para una imagen. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen_ac21b1c758a32e6c43315b9f46caf673e}{Imagen} (const \hyperlink{class_imagen}{Imagen} \&)
+\begin{DoxyCompactList}\small\item\em Contructor de copia de la clase \hyperlink{class_imagen}{Imagen}. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen}{Imagen} \& \hyperlink{class_imagen_a43d10ec74966d22e5477f686462802dc}{operator=} (const \hyperlink{class_imagen}{Imagen} \&img)
+\begin{DoxyCompactList}\small\item\em Operador de asignación de la clase imagen. Si la imagen a asignar es la misma que la actual no hace nada. Si la imagen ya estaba creada, se destruye. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen}{Imagen} \hyperlink{class_imagen_afc8f4a032d37f2012f1175599f81d60b}{operator+} (\hyperlink{class_imagen}{Imagen} img)
+\begin{DoxyCompactList}\small\item\em Operador + de la clase imagen. Devuelve una nueva imagen compuesta por los dos sumandos colocados uno al lado del otro y con el espacio que quede en negro. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen_a7632978f5ae089713e652bb362da1e78}{Imagen} (int \hyperlink{class_imagen_af74657d5c16a52feeda9d233cfe29b33}{filas}, int \hyperlink{class_imagen_aaed2f76db10125985aac80e439ec7b6d}{columnas})
+\begin{DoxyCompactList}\small\item\em Construye una imagen negra de tamaño {\itshape filas} x {\itshape columnas}. \end{DoxyCompactList}\item 
+void \hyperlink{class_imagen_a3c963c0aaa02767f65b4510cb39027ac}{crear} (int \hyperlink{class_imagen_af74657d5c16a52feeda9d233cfe29b33}{filas}, int \hyperlink{class_imagen_aaed2f76db10125985aac80e439ec7b6d}{columnas})
+\begin{DoxyCompactList}\small\item\em Crea una imagen negra de tamaño {\itshape filas} x {\itshape columnas}. \end{DoxyCompactList}\item 
+int \hyperlink{class_imagen_af74657d5c16a52feeda9d233cfe29b33}{filas} () const 
+\begin{DoxyCompactList}\small\item\em Devuelve el número de filas de las imagen. \end{DoxyCompactList}\item 
+int \hyperlink{class_imagen_aaed2f76db10125985aac80e439ec7b6d}{columnas} () const 
+\begin{DoxyCompactList}\small\item\em Devuelve el número de columnas de las imagen. \end{DoxyCompactList}\item 
+void \hyperlink{class_imagen_a722347f0110d794f96c92beda6710158}{set} (int y, int x, \hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} v)
+\begin{DoxyCompactList}\small\item\em Asigna el valor {\itshape v} a la posición ({\itshape x},{\itshape y}) de la imagen. \end{DoxyCompactList}\item 
+\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \hyperlink{class_imagen_ab8a0d7d44f6d22678ed7fea1e9617e25}{get} (int y, int x)
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de la posición ({\itshape x},{\itshape y}) de la imagen. \end{DoxyCompactList}\item 
+void \hyperlink{class_imagen_a9c1bfd9bff6ae8851f3e0c9ac2e90382}{set\+Pos} (int i, \hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} v)
+\begin{DoxyCompactList}\small\item\em Asigna el valor {\itshape v} a la posición {\itshape i} de la imagen considerada como vector. \end{DoxyCompactList}\item 
+\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \hyperlink{class_imagen_a00b702abaaf3261ade141597beb7bc55}{get\+Pos} (int i) const 
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de la posición {\itshape i} de la imagen considerada como vector. \end{DoxyCompactList}\item 
+bool \hyperlink{class_imagen_aa46cc99da218afa01f55395e4c96ffe0}{leer\+Imagen} (const char nombre\+Fichero\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Carga una imagen desde un fichero. \end{DoxyCompactList}\item 
+bool \hyperlink{class_imagen_aec07c487f3cb1ea1fdd26cb555f02ed1}{escribir\+Imagen} (const char nombre\+Fichero\mbox{[}$\,$\mbox{]}, bool es\+Binario)
+\begin{DoxyCompactList}\small\item\em Guarda una imagen desde un fichero. \end{DoxyCompactList}\item 
+\hyperlink{class_imagen}{Imagen} $\ast$ \hyperlink{class_imagen_a738d3b88a80606af9d78458e5586e04c}{plano} (int k)
+\begin{DoxyCompactList}\small\item\em Extrae de la imagen el plano del bit del vector indicado por {\itshape k}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_imagen_aa5c1f94763ca1774792548daa3d0e793}{a\+Arte\+A\+S\+C\+I\+I} (const char grises\mbox{[}$\,$\mbox{]}, char arte\+A\+S\+C\+I\+I\mbox{[}$\,$\mbox{]}, int maxlong)
+\begin{DoxyCompactList}\small\item\em Dada una imagen, se convierte equivalente utilizando caracteres A\+S\+C\+I\+I. \end{DoxyCompactList}\item 
+bool \hyperlink{class_imagen_a0266a25af1413cb57d9da880e7881860}{lista\+A\+Arte\+A\+S\+C\+I\+I} (const \hyperlink{class_lista}{Lista} \&celdas)
+\begin{DoxyCompactList}\small\item\em Dada una lista de strings que representan niveles de gris, se ejecuta la función  a\+Arte\+A\+S\+C\+I\+I con cada string. El resultado de pasar la imagen a arte A\+S\+C\+I\+I con cada grupo de grises se guarda en archivos con nombre ascii1.\+txt, ascii2.\+txt,... \end{DoxyCompactList}\item 
+void \hyperlink{class_imagen_aea77aed960516bf385f94249f074dd9a}{destruir} ()
+\begin{DoxyCompactList}\small\item\em Libera la memoria de una imagen. Esta función es llamada por el destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$$\ast$ \hyperlink{class_imagen_a74bf3487e42bb65862e994883fa05b33}{datos}
+\begin{DoxyCompactList}\small\item\em puntero a los punteros de las filas \end{DoxyCompactList}\item 
+int \hyperlink{class_imagen_a89599a9692fbe4cb60ee16c0a30a64ef}{nfilas}
+\begin{DoxyCompactList}\small\item\em número de filas de la imagen \end{DoxyCompactList}\item 
+int \hyperlink{class_imagen_a4b38c0642ab84fe5f945272180ae8306}{ncolumnas}
+\begin{DoxyCompactList}\small\item\em número de columnsa de la imagen \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Una imagen en blanco y negro. Cada píxel es un byte. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{class_imagen_ab2e649aa7a105155c7bfdb846abf0528}{}\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection[{Imagen()}]{\setlength{\rightskip}{0pt plus 5cm}Imagen\+::\+Imagen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_imagen_ab2e649aa7a105155c7bfdb846abf0528}
+
+
+Constructor por defecto. Crea un \hyperlink{class_imagen}{Imagen} vacía de 0 filas x 0 columnas. 
+
+\hypertarget{class_imagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}{}\index{Imagen@{Imagen}!````~Imagen@{$\sim$\+Imagen}}
+\index{````~Imagen@{$\sim$\+Imagen}!Imagen@{Imagen}}
+\subsubsection[{$\sim$\+Imagen()}]{\setlength{\rightskip}{0pt plus 5cm}Imagen\+::$\sim$\+Imagen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}
+
+
+Libera la memoria reservada para una imagen. 
+
+\hypertarget{class_imagen_ac21b1c758a32e6c43315b9f46caf673e}{}\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection[{Imagen(const Imagen \&)}]{\setlength{\rightskip}{0pt plus 5cm}Imagen\+::\+Imagen (
+\begin{DoxyParamCaption}
+\item[{const {\bf Imagen} \&}]{img}
+\end{DoxyParamCaption}
+)}\label{class_imagen_ac21b1c758a32e6c43315b9f46caf673e}
+
+
+Contructor de copia de la clase \hyperlink{class_imagen}{Imagen}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \hyperlink{class_imagen}{Imagen}} & a copiar \\
+\hline
+\end{DoxyParams}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_imagen_ac21b1c758a32e6c43315b9f46caf673e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a7632978f5ae089713e652bb362da1e78}{}\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection[{Imagen(int filas, int columnas)}]{\setlength{\rightskip}{0pt plus 5cm}Imagen\+::\+Imagen (
+\begin{DoxyParamCaption}
+\item[{int}]{filas, }
+\item[{int}]{columnas}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a7632978f5ae089713e652bb362da1e78}
+
+
+Construye una imagen negra de tamaño {\itshape filas} x {\itshape columnas}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & número de filas de la imagen \\
+\hline
+{\em columnas} & número de columnas de la imagen\\
+\hline
+\end{DoxyParams}
+Construye una imagen de tamaño {\itshape filas} x {\itshape columnas} y pone todos sus elementos a 0. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{class_imagen_aa5c1f94763ca1774792548daa3d0e793}{}\index{Imagen@{Imagen}!a\+Arte\+A\+S\+C\+I\+I@{a\+Arte\+A\+S\+C\+I\+I}}
+\index{a\+Arte\+A\+S\+C\+I\+I@{a\+Arte\+A\+S\+C\+I\+I}!Imagen@{Imagen}}
+\subsubsection[{a\+Arte\+A\+S\+C\+I\+I(const char grises[], char arte\+A\+S\+C\+I\+I[], int maxlong)}]{\setlength{\rightskip}{0pt plus 5cm}bool Imagen\+::a\+Arte\+A\+S\+C\+I\+I (
+\begin{DoxyParamCaption}
+\item[{const char}]{grises\mbox{[}$\,$\mbox{]}, }
+\item[{char}]{arte\+A\+S\+C\+I\+I\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{maxlong}
+\end{DoxyParamCaption}
+)}\label{class_imagen_aa5c1f94763ca1774792548daa3d0e793}
+
+
+Dada una imagen, se convierte equivalente utilizando caracteres A\+S\+C\+I\+I. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em grises} & caracteres que se utilizarán en el arte A\+S\+C\+I\+I \\
+\hline
+{\em arte\+A\+S\+C\+I\+I} & vector resultante con la cadena A\+S\+C\+I\+I que representa la imagen \\
+\hline
+{\em maxlong} & longitud máxima \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & la imagen cabe en el vector resultante \\
+\hline
+{\em false} & la imagen no cabe en el vector resultante \\
+\hline
+\end{DoxyRetVals}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_imagen_aa5c1f94763ca1774792548daa3d0e793_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_aaed2f76db10125985aac80e439ec7b6d}{}\index{Imagen@{Imagen}!columnas@{columnas}}
+\index{columnas@{columnas}!Imagen@{Imagen}}
+\subsubsection[{columnas() const }]{\setlength{\rightskip}{0pt plus 5cm}int Imagen\+::columnas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_imagen_aaed2f76db10125985aac80e439ec7b6d}
+
+
+Devuelve el número de columnas de las imagen. 
+
+\begin{DoxyReturn}{Devuelve}
+el número de columnas de la imagen 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_imagen_aaed2f76db10125985aac80e439ec7b6d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a3c963c0aaa02767f65b4510cb39027ac}{}\index{Imagen@{Imagen}!crear@{crear}}
+\index{crear@{crear}!Imagen@{Imagen}}
+\subsubsection[{crear(int filas, int columnas)}]{\setlength{\rightskip}{0pt plus 5cm}void Imagen\+::crear (
+\begin{DoxyParamCaption}
+\item[{int}]{filas, }
+\item[{int}]{columnas}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a3c963c0aaa02767f65b4510cb39027ac}
+
+
+Crea una imagen negra de tamaño {\itshape filas} x {\itshape columnas}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & número de filas de la imagen \\
+\hline
+{\em columnas} & número de columnas de la imagen\\
+\hline
+\end{DoxyParams}
+Dimensiona la imagen a tamaño {\itshape filas} x {\itshape columnas} y pone todos sus elementos a 0. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_imagen_a3c963c0aaa02767f65b4510cb39027ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_aea77aed960516bf385f94249f074dd9a}{}\index{Imagen@{Imagen}!destruir@{destruir}}
+\index{destruir@{destruir}!Imagen@{Imagen}}
+\subsubsection[{destruir()}]{\setlength{\rightskip}{0pt plus 5cm}void Imagen\+::destruir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_imagen_aea77aed960516bf385f94249f074dd9a}
+
+
+Libera la memoria de una imagen. Esta función es llamada por el destructor. 
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_imagen_aea77aed960516bf385f94249f074dd9a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_aec07c487f3cb1ea1fdd26cb555f02ed1}{}\index{Imagen@{Imagen}!escribir\+Imagen@{escribir\+Imagen}}
+\index{escribir\+Imagen@{escribir\+Imagen}!Imagen@{Imagen}}
+\subsubsection[{escribir\+Imagen(const char nombre\+Fichero[], bool es\+Binario)}]{\setlength{\rightskip}{0pt plus 5cm}bool Imagen\+::escribir\+Imagen (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\+Fichero\mbox{[}$\,$\mbox{]}, }
+\item[{bool}]{es\+Binario}
+\end{DoxyParamCaption}
+)}\label{class_imagen_aec07c487f3cb1ea1fdd26cb555f02ed1}
+
+
+Guarda una imagen desde un fichero. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre\+Fichero} & nombre del fichero que contiene la imagen \\
+\hline
+{\em es\+Binario} & toma el valor {\ttfamily true} si el fichero se escribe en formato binario o {\ttfamily false} en caso contrario. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la escritura \\
+\hline
+{\em false} & si se ha producido algún error en la escritura \\
+\hline
+\end{DoxyRetVals}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_imagen_aec07c487f3cb1ea1fdd26cb555f02ed1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_imagen_aec07c487f3cb1ea1fdd26cb555f02ed1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_af74657d5c16a52feeda9d233cfe29b33}{}\index{Imagen@{Imagen}!filas@{filas}}
+\index{filas@{filas}!Imagen@{Imagen}}
+\subsubsection[{filas() const }]{\setlength{\rightskip}{0pt plus 5cm}int Imagen\+::filas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_imagen_af74657d5c16a52feeda9d233cfe29b33}
+
+
+Devuelve el número de filas de las imagen. 
+
+\begin{DoxyReturn}{Devuelve}
+el número de filas de la imagen 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_imagen_af74657d5c16a52feeda9d233cfe29b33_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_ab8a0d7d44f6d22678ed7fea1e9617e25}{}\index{Imagen@{Imagen}!get@{get}}
+\index{get@{get}!Imagen@{Imagen}}
+\subsubsection[{get(int y, int x)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte} Imagen\+::get (
+\begin{DoxyParamCaption}
+\item[{int}]{y, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\label{class_imagen_ab8a0d7d44f6d22678ed7fea1e9617e25}
+
+
+Devuelve el valor de la posición ({\itshape x},{\itshape y}) de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em y} & fila de la imagen \\
+\hline
+{\em x} & columna de la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el valor de la posición ({\itshape x},{\itshape y}) de la imagen
+\end{DoxyReturn}
+Devuelve el valor de la posición ({\itshape x},{\itshape y}) de la imagen. Dado que la imagen se guarda como un vector, la posición ({\itshape x},{\itshape y}) corresponde a la posición {\itshape y} $\ast$ {\ttfamily ncolumnas} + {\itshape x} del vector. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_imagen_ab8a0d7d44f6d22678ed7fea1e9617e25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a00b702abaaf3261ade141597beb7bc55}{}\index{Imagen@{Imagen}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!Imagen@{Imagen}}
+\subsubsection[{get\+Pos(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte} Imagen\+::get\+Pos (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\label{class_imagen_a00b702abaaf3261ade141597beb7bc55}
+
+
+Devuelve el valor de la posición {\itshape i} de la imagen considerada como vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & posición de la imagen considerada como vector\\
+\hline
+\end{DoxyParams}
+Devuelve el valor de la posición {\itshape i} de la imagen considerada como vector. La posición {\itshape i} corresponde con la posición {\ttfamily y} $\ast$ {\ttfamily ncolumnas} + {\ttfamily x} de la imagen donde {\ttfamily y} representa la fila y {\ttfamily x} representa la columna. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_imagen_a00b702abaaf3261ade141597beb7bc55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_aa46cc99da218afa01f55395e4c96ffe0}{}\index{Imagen@{Imagen}!leer\+Imagen@{leer\+Imagen}}
+\index{leer\+Imagen@{leer\+Imagen}!Imagen@{Imagen}}
+\subsubsection[{leer\+Imagen(const char nombre\+Fichero[])}]{\setlength{\rightskip}{0pt plus 5cm}bool Imagen\+::leer\+Imagen (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombre\+Fichero\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{class_imagen_aa46cc99da218afa01f55395e4c96ffe0}
+
+
+Carga una imagen desde un fichero. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre\+Fichero} & nombre del fichero que contiene la imagen \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la lectura \\
+\hline
+{\em false} & si se ha producido algún error en la lectura\\
+\hline
+\end{DoxyRetVals}
+Lee desde disco los datos de la imagen llamada {\itshape nombre\+Fichero} y la guarda en la memoria. La función debe asegurarse de que la imagen es de un tipo de imagen conocido. 
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_imagen_aa46cc99da218afa01f55395e4c96ffe0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{class_imagen_aa46cc99da218afa01f55395e4c96ffe0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a0266a25af1413cb57d9da880e7881860}{}\index{Imagen@{Imagen}!lista\+A\+Arte\+A\+S\+C\+I\+I@{lista\+A\+Arte\+A\+S\+C\+I\+I}}
+\index{lista\+A\+Arte\+A\+S\+C\+I\+I@{lista\+A\+Arte\+A\+S\+C\+I\+I}!Imagen@{Imagen}}
+\subsubsection[{lista\+A\+Arte\+A\+S\+C\+I\+I(const Lista \&celdas)}]{\setlength{\rightskip}{0pt plus 5cm}bool Imagen\+::lista\+A\+Arte\+A\+S\+C\+I\+I (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lista} \&}]{celdas}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a0266a25af1413cb57d9da880e7881860}
+
+
+Dada una lista de strings que representan niveles de gris, se ejecuta la función  a\+Arte\+A\+S\+C\+I\+I con cada string. El resultado de pasar la imagen a arte A\+S\+C\+I\+I con cada grupo de grises se guarda en archivos con nombre ascii1.\+txt, ascii2.\+txt,... 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em celdas} & \hyperlink{class_lista}{Lista} de strings de niveles de gris \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & todas las conversiones fueron posibles \\
+\hline
+{\em false} & alguna conversión falló \\
+\hline
+\end{DoxyRetVals}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_imagen_a0266a25af1413cb57d9da880e7881860_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_imagen_a0266a25af1413cb57d9da880e7881860_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_afc8f4a032d37f2012f1175599f81d60b}{}\index{Imagen@{Imagen}!operator+@{operator+}}
+\index{operator+@{operator+}!Imagen@{Imagen}}
+\subsubsection[{operator+(\+Imagen img)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imagen} Imagen\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Imagen}}]{img}
+\end{DoxyParamCaption}
+)}\label{class_imagen_afc8f4a032d37f2012f1175599f81d60b}
+
+
+Operador + de la clase imagen. Devuelve una nueva imagen compuesta por los dos sumandos colocados uno al lado del otro y con el espacio que quede en negro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em img} & imagen a sumar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+imagen suma 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_imagen_afc8f4a032d37f2012f1175599f81d60b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a43d10ec74966d22e5477f686462802dc}{}\index{Imagen@{Imagen}!operator=@{operator=}}
+\index{operator=@{operator=}!Imagen@{Imagen}}
+\subsubsection[{operator=(const Imagen \&img)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imagen} \& Imagen\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Imagen} \&}]{img}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a43d10ec74966d22e5477f686462802dc}
+
+
+Operador de asignación de la clase imagen. Si la imagen a asignar es la misma que la actual no hace nada. Si la imagen ya estaba creada, se destruye. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em img} & imagen a copiar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+imagen nueva copiada 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_imagen_a43d10ec74966d22e5477f686462802dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a738d3b88a80606af9d78458e5586e04c}{}\index{Imagen@{Imagen}!plano@{plano}}
+\index{plano@{plano}!Imagen@{Imagen}}
+\subsubsection[{plano(int k)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imagen} $\ast$ Imagen\+::plano (
+\begin{DoxyParamCaption}
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a738d3b88a80606af9d78458e5586e04c}
+
+
+Extrae de la imagen el plano del bit del vector indicado por {\itshape k}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em k} & Numero del bit del que extraer el plano\\
+\hline
+\end{DoxyParams}
+Extrae de la imagen el plano de la imagen del bit indicado por {\itshape k}, despues devuelve como una nueva imagen el plano resultante. 
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_imagen_a738d3b88a80606af9d78458e5586e04c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_imagen_a738d3b88a80606af9d78458e5586e04c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a722347f0110d794f96c92beda6710158}{}\index{Imagen@{Imagen}!set@{set}}
+\index{set@{set}!Imagen@{Imagen}}
+\subsubsection[{set(int y, int x, byte v)}]{\setlength{\rightskip}{0pt plus 5cm}void Imagen\+::set (
+\begin{DoxyParamCaption}
+\item[{int}]{y, }
+\item[{int}]{x, }
+\item[{{\bf byte}}]{v}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a722347f0110d794f96c92beda6710158}
+
+
+Asigna el valor {\itshape v} a la posición ({\itshape x},{\itshape y}) de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em y} & fila de la imagen \\
+\hline
+{\em x} & columna de la imagen \\
+\hline
+{\em v} & valor a asignar\\
+\hline
+\end{DoxyParams}
+Asigna el valor {\itshape v} a la posición ({\itshape x},{\itshape y}) de la imagen. Dado que la imagen se guarda como un vector, la posición ({\itshape x},{\itshape y}) corresponde a la posición {\itshape y} $\ast$ {\ttfamily ncolumnas} + {\itshape x} del vector. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_imagen_a722347f0110d794f96c92beda6710158_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_imagen_a9c1bfd9bff6ae8851f3e0c9ac2e90382}{}\index{Imagen@{Imagen}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!Imagen@{Imagen}}
+\subsubsection[{set\+Pos(int i, byte v)}]{\setlength{\rightskip}{0pt plus 5cm}void Imagen\+::set\+Pos (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{{\bf byte}}]{v}
+\end{DoxyParamCaption}
+)}\label{class_imagen_a9c1bfd9bff6ae8851f3e0c9ac2e90382}
+
+
+Asigna el valor {\itshape v} a la posición {\itshape i} de la imagen considerada como vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & posición de la imagen considerada como vector \\
+\hline
+{\em v} & valor a asignar\\
+\hline
+\end{DoxyParams}
+Asigna el valor {\itshape v} a la posición {\itshape i} de la imagen considerada como vector. La posición {\itshape i} corresponde con la posición {\ttfamily y} $\ast$ {\ttfamily ncolumnas} + {\ttfamily x} de la imagen donde {\ttfamily y} representa la fila y {\ttfamily x} representa la columna. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_imagen_a9c1bfd9bff6ae8851f3e0c9ac2e90382_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{class_imagen_a74bf3487e42bb65862e994883fa05b33}{}\index{Imagen@{Imagen}!datos@{datos}}
+\index{datos@{datos}!Imagen@{Imagen}}
+\subsubsection[{datos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte}$\ast$$\ast$ Imagen\+::datos\hspace{0.3cm}{\ttfamily [private]}}\label{class_imagen_a74bf3487e42bb65862e994883fa05b33}
+
+
+puntero a los punteros de las filas 
+
+\hypertarget{class_imagen_a4b38c0642ab84fe5f945272180ae8306}{}\index{Imagen@{Imagen}!ncolumnas@{ncolumnas}}
+\index{ncolumnas@{ncolumnas}!Imagen@{Imagen}}
+\subsubsection[{ncolumnas}]{\setlength{\rightskip}{0pt plus 5cm}int Imagen\+::ncolumnas\hspace{0.3cm}{\ttfamily [private]}}\label{class_imagen_a4b38c0642ab84fe5f945272180ae8306}
+
+
+número de columnsa de la imagen 
+
+\hypertarget{class_imagen_a89599a9692fbe4cb60ee16c0a30a64ef}{}\index{Imagen@{Imagen}!nfilas@{nfilas}}
+\index{nfilas@{nfilas}!Imagen@{Imagen}}
+\subsubsection[{nfilas}]{\setlength{\rightskip}{0pt plus 5cm}int Imagen\+::nfilas\hspace{0.3cm}{\ttfamily [private]}}\label{class_imagen_a89599a9692fbe4cb60ee16c0a30a64ef}
+
+
+número de filas de la imagen 
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{imagen_8h}{imagen.\+h}\item 
+src/\hyperlink{imagen_8cpp}{imagen.\+cpp}\end{DoxyCompactItemize}

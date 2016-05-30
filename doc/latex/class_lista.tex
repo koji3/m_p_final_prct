@@ -1,0 +1,316 @@
+\hypertarget{class_lista}{}\section{Referencia de la Clase Lista}
+\label{class_lista}\index{Lista@{Lista}}
+
+
+{\ttfamily \#include $<$lista.\+h$>$}
+
+
+
+Diagrama de colaboración para Lista\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{class_lista__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lista_a1f668b36909182ef1360b48503529a31}{Lista} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. Crea una lista vacía. \end{DoxyCompactList}\item 
+\hyperlink{class_lista_a4d7394b2728a00ad8404965b2e15d096}{$\sim$\+Lista} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Libera todos los recursos reservados a la lista. \end{DoxyCompactList}\item 
+\hyperlink{class_lista_a6a479a165fde4f0b9842d2b26f9fce75}{Lista} (const \hyperlink{class_lista}{Lista} \&)
+\begin{DoxyCompactList}\small\item\em Constructor de copia de la clase \hyperlink{class_lista}{Lista}. \end{DoxyCompactList}\item 
+\hyperlink{class_lista_adb33dfb3ac2cfef81f52af48afeef0a7}{Lista} (string cadena)
+\begin{DoxyCompactList}\small\item\em Construye una lista a partir de un elemento. \end{DoxyCompactList}\item 
+void \hyperlink{class_lista_a7b1f5c4b50044823f2746853bfaa5e15}{destruir} ()
+\begin{DoxyCompactList}\small\item\em Libera la memoria reservada en la lista de cadenas. \end{DoxyCompactList}\item 
+void \hyperlink{class_lista_a2cf31ee7be6ed41e9084efffb807aa5e}{insertar} (string cadena)
+\begin{DoxyCompactList}\small\item\em inserta una nueva cadena al final de la lista \end{DoxyCompactList}\item 
+string \hyperlink{class_lista_a69c0764aa81aca4543b2a9898d941f51}{get\+Celda} (int i) const 
+\begin{DoxyCompactList}\small\item\em devuelve la cadena de la posicion i-\/esima de la lista o una cadena vacia en caso de que el valor de i sea erroneo. \end{DoxyCompactList}\item 
+int \hyperlink{class_lista_a445fbaf0a89d99ed9830ae7d0c8dd12f}{longitud} () const 
+\begin{DoxyCompactList}\small\item\em devuelve el numero de celdas que contiene la lista \end{DoxyCompactList}\item 
+bool \hyperlink{class_lista_aa4be655d8d5ea8e8189e7c577c86b34e}{leer\+Lista} (const char nombrefichero\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construye una lista de celdas enlazadas a partir de la informacion contenida en un fichero. \end{DoxyCompactList}\item 
+\hyperlink{class_lista}{Lista} \& \hyperlink{class_lista_a8e15d78e45d53ef28d3da4f17b245ebc}{operator=} (const \hyperlink{class_lista}{Lista} \&otra)
+\begin{DoxyCompactList}\small\item\em Operador de asignación de la clase \hyperlink{class_lista}{Lista}. Si ambos objetos son el mismo se devuelve un puntero a ese sin hacer nada más. \end{DoxyCompactList}\item 
+\hyperlink{class_lista}{Lista} \& \hyperlink{class_lista_a01603de447b008cdcbe72828fb7fb806}{operator+} (const string \&s1)
+\begin{DoxyCompactList}\small\item\em Operador + de la clase \hyperlink{class_lista}{Lista}. Permite añadir un nuevo string a la lista usando el operador +. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_celda}{Celda} $\ast$ \hyperlink{class_lista_a3a8e4a0637c6c328a00acc4b186f34a2}{cabecera}
+\item 
+int \hyperlink{class_lista_ad88ae756eb0ea2e6d3046335c5a44db8}{num\+\_\+elementos}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{class_lista_a1f668b36909182ef1360b48503529a31}{}\index{Lista@{Lista}!Lista@{Lista}}
+\index{Lista@{Lista}!Lista@{Lista}}
+\subsubsection[{Lista()}]{\setlength{\rightskip}{0pt plus 5cm}Lista\+::\+Lista (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_lista_a1f668b36909182ef1360b48503529a31}
+
+
+Constructor por defecto. Crea una lista vacía. 
+
+\hypertarget{class_lista_a4d7394b2728a00ad8404965b2e15d096}{}\index{Lista@{Lista}!````~Lista@{$\sim$\+Lista}}
+\index{````~Lista@{$\sim$\+Lista}!Lista@{Lista}}
+\subsubsection[{$\sim$\+Lista()}]{\setlength{\rightskip}{0pt plus 5cm}Lista\+::$\sim$\+Lista (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_lista_a4d7394b2728a00ad8404965b2e15d096}
+
+
+Destructor. Libera todos los recursos reservados a la lista. 
+
+\hypertarget{class_lista_a6a479a165fde4f0b9842d2b26f9fce75}{}\index{Lista@{Lista}!Lista@{Lista}}
+\index{Lista@{Lista}!Lista@{Lista}}
+\subsubsection[{Lista(const Lista \&)}]{\setlength{\rightskip}{0pt plus 5cm}Lista\+::\+Lista (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lista} \&}]{otra}
+\end{DoxyParamCaption}
+)}\label{class_lista_a6a479a165fde4f0b9842d2b26f9fce75}
+
+
+Constructor de copia de la clase \hyperlink{class_lista}{Lista}. 
+
+\hypertarget{class_lista_adb33dfb3ac2cfef81f52af48afeef0a7}{}\index{Lista@{Lista}!Lista@{Lista}}
+\index{Lista@{Lista}!Lista@{Lista}}
+\subsubsection[{Lista(string cadena)}]{\setlength{\rightskip}{0pt plus 5cm}Lista\+::\+Lista (
+\begin{DoxyParamCaption}
+\item[{string}]{cadena}
+\end{DoxyParamCaption}
+)}\label{class_lista_adb33dfb3ac2cfef81f52af48afeef0a7}
+
+
+Construye una lista a partir de un elemento. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cadena} & el elemento a insertar en la lista\\
+\hline
+\end{DoxyParams}
+Construye una lista de tamaño 1 e inserta la cadena {\itshape cadena} 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{class_lista_a7b1f5c4b50044823f2746853bfaa5e15}{}\index{Lista@{Lista}!destruir@{destruir}}
+\index{destruir@{destruir}!Lista@{Lista}}
+\subsubsection[{destruir()}]{\setlength{\rightskip}{0pt plus 5cm}void Lista\+::destruir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_lista_a7b1f5c4b50044823f2746853bfaa5e15}
+
+
+Libera la memoria reservada en la lista de cadenas. 
+
+Libera la memoria reservada en el vetor de imagen y actualiza el numero de elementos de la misma a 0. \hypertarget{class_lista_a69c0764aa81aca4543b2a9898d941f51}{}\index{Lista@{Lista}!get\+Celda@{get\+Celda}}
+\index{get\+Celda@{get\+Celda}!Lista@{Lista}}
+\subsubsection[{get\+Celda(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}string Lista\+::get\+Celda (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\label{class_lista_a69c0764aa81aca4543b2a9898d941f51}
+
+
+devuelve la cadena de la posicion i-\/esima de la lista o una cadena vacia en caso de que el valor de i sea erroneo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & indice del elemento dentro de la lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+i debe ser menor que el tamaño total de la lista. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Devuelve}
+la cadena que se encuentra en la celda con indice {\itshape i} siempre que este valor se encuentre en los margenes de la lista, o una cadena vacia en caso contrario 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lista_a69c0764aa81aca4543b2a9898d941f51_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_lista_a2cf31ee7be6ed41e9084efffb807aa5e}{}\index{Lista@{Lista}!insertar@{insertar}}
+\index{insertar@{insertar}!Lista@{Lista}}
+\subsubsection[{insertar(string cadena)}]{\setlength{\rightskip}{0pt plus 5cm}void Lista\+::insertar (
+\begin{DoxyParamCaption}
+\item[{string}]{cadena}
+\end{DoxyParamCaption}
+)}\label{class_lista_a2cf31ee7be6ed41e9084efffb807aa5e}
+
+
+inserta una nueva cadena al final de la lista 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cad} & elemento a insertar en la lista\\
+\hline
+\end{DoxyParams}
+Añade un nuevo elemento ( {\itshape cadena} ) a la lista 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_lista_a2cf31ee7be6ed41e9084efffb807aa5e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_lista_aa4be655d8d5ea8e8189e7c577c86b34e}{}\index{Lista@{Lista}!leer\+Lista@{leer\+Lista}}
+\index{leer\+Lista@{leer\+Lista}!Lista@{Lista}}
+\subsubsection[{leer\+Lista(const char nombrefichero[])}]{\setlength{\rightskip}{0pt plus 5cm}bool Lista\+::leer\+Lista (
+\begin{DoxyParamCaption}
+\item[{const char}]{nombrefichero\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{class_lista_aa4be655d8d5ea8e8189e7c577c86b34e}
+
+
+Construye una lista de celdas enlazadas a partir de la informacion contenida en un fichero. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre\+Fichero} & ruta del fichero de texto con el contenido de las cadenas a insertar en la lista \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la lectura y el formato es el correcto \\
+\hline
+{\em false} & si se ha producido algún error en la lectura\\
+\hline
+\end{DoxyRetVals}
+Lee desde disco los elementos almacenados en {\itshape nombre\+Fichero} y los guarda en la lista. La función debe asegurarse de que la estructura sigue un patron determinado, y se ha de crear la lista con el numero de elementos que contenga.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre\+Fichero} & ruta del fichero de texto con el contenido de las datoss a insertar en la lista \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si ha tenido éxito en la lectura y el formato es el correcto \\
+\hline
+{\em false} & si se ha producido algún error en la lectura\\
+\hline
+\end{DoxyRetVals}
+Lee desde disco los elementos almacenados en {\itshape nombre\+Fichero} y los guarda en la lista. La función debe asegurarse de que la estructura sigue un patron determinado, y se ha de crear la lista con el numero de elementos que contenga. 
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_lista_aa4be655d8d5ea8e8189e7c577c86b34e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_lista_a445fbaf0a89d99ed9830ae7d0c8dd12f}{}\index{Lista@{Lista}!longitud@{longitud}}
+\index{longitud@{longitud}!Lista@{Lista}}
+\subsubsection[{longitud() const }]{\setlength{\rightskip}{0pt plus 5cm}int Lista\+::longitud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_lista_a445fbaf0a89d99ed9830ae7d0c8dd12f}
+
+
+devuelve el numero de celdas que contiene la lista 
+
+\begin{DoxyReturn}{Devuelve}
+el tamaño de la lista 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lista_a445fbaf0a89d99ed9830ae7d0c8dd12f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_lista_a01603de447b008cdcbe72828fb7fb806}{}\index{Lista@{Lista}!operator+@{operator+}}
+\index{operator+@{operator+}!Lista@{Lista}}
+\subsubsection[{operator+(const string \&s1)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lista} \& Lista\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{s1}
+\end{DoxyParamCaption}
+)}\label{class_lista_a01603de447b008cdcbe72828fb7fb806}
+
+
+Operador + de la clase \hyperlink{class_lista}{Lista}. Permite añadir un nuevo string a la lista usando el operador +. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em String} & a añadir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la lista ya modificada. 
+\end{DoxyReturn}
+
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_lista_a01603de447b008cdcbe72828fb7fb806_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_lista_a8e15d78e45d53ef28d3da4f17b245ebc}{}\index{Lista@{Lista}!operator=@{operator=}}
+\index{operator=@{operator=}!Lista@{Lista}}
+\subsubsection[{operator=(const Lista \&otra)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lista} \& Lista\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lista} \&}]{otra}
+\end{DoxyParamCaption}
+)}\label{class_lista_a8e15d78e45d53ef28d3da4f17b245ebc}
+
+
+Operador de asignación de la clase \hyperlink{class_lista}{Lista}. Si ambos objetos son el mismo se devuelve un puntero a ese sin hacer nada más. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \hyperlink{class_lista}{Lista}} & a copiar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+puntero a la lista recién asignada. 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{class_lista_a3a8e4a0637c6c328a00acc4b186f34a2}{}\index{Lista@{Lista}!cabecera@{cabecera}}
+\index{cabecera@{cabecera}!Lista@{Lista}}
+\subsubsection[{cabecera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Celda}$\ast$ Lista\+::cabecera\hspace{0.3cm}{\ttfamily [private]}}\label{class_lista_a3a8e4a0637c6c328a00acc4b186f34a2}
+\hypertarget{class_lista_ad88ae756eb0ea2e6d3046335c5a44db8}{}\index{Lista@{Lista}!num\+\_\+elementos@{num\+\_\+elementos}}
+\index{num\+\_\+elementos@{num\+\_\+elementos}!Lista@{Lista}}
+\subsubsection[{num\+\_\+elementos}]{\setlength{\rightskip}{0pt plus 5cm}int Lista\+::num\+\_\+elementos\hspace{0.3cm}{\ttfamily [private]}}\label{class_lista_ad88ae756eb0ea2e6d3046335c5a44db8}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{lista_8h}{lista.\+h}\item 
+src/\hyperlink{lista_8cpp}{lista.\+cpp}\end{DoxyCompactItemize}

@@ -52,5 +52,5 @@ documentacion:
 # ************ Limpieza ************
 
 clean:
-	rm $(OBJ)/* $(BIN)/* $(LIB)/*
+	rm $(OBJ)/* $(BIN)/* $(LIB)/* *.pgm ascii*.txt
 	

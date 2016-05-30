@@ -1,0 +1,275 @@
+\hypertarget{namespacebytaso}{}\section{Referencia del Namespace bytaso}
+\label{namespacebytaso}\index{bytaso@{bytaso}}
+\subsection*{\textquotesingle{}typedefs\textquotesingle{}}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte}
+\begin{DoxyCompactList}\small\item\em Un {\ttfamily byte} contiene el estado de 8 bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacebytaso_ae98a18093e63134e5f1ddec44973c6ec}{on} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} \&b, int pos)
+\begin{DoxyCompactList}\small\item\em enciende el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a477a14f602dcc9264dbb6f874d170834}{off} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} \&b, int pos)
+\begin{DoxyCompactList}\small\item\em apaga el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} \end{DoxyCompactList}\item 
+bool \hyperlink{namespacebytaso_ad231ba96547f99130292527f5d65694b}{get} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} b, int pos)
+\begin{DoxyCompactList}\small\item\em devuelve el estado del bit (encendido = true, apagado = false) en la posición {\ttfamily pos} \end{DoxyCompactList}\item 
+string \hyperlink{namespacebytaso_a01303edb3c075bbf9f10324914352a50}{byte\+To\+String} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} b)
+\begin{DoxyCompactList}\small\item\em Muestra por la salida estándar una secuencia de 0s y 1s correspondiente al estado de cada bit. \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a5e016205a37415abe06efd845593bc2a}{encender} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} \&b)
+\begin{DoxyCompactList}\small\item\em enciende todos los bits \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a29bc6fb2d3ca8a24ee9a8fc044aed54a}{apagar} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} \&b)
+\begin{DoxyCompactList}\small\item\em apaga todos los bits \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_ae93ec524c1a740b4144a2ec249d07446}{asignar} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} \&b, const bool v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em enciende los bits según la configuración de {\ttfamily v} \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_aca892e499e255f8b8a967b67cd164a75}{volcar} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} b, bool v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em recupera la configuración de todos los bit \end{DoxyCompactList}\item 
+void \hyperlink{namespacebytaso_a76ad23326440e16a7b419ee7a14ee287}{encendidos} (\hyperlink{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{byte} b, int posic\mbox{[}$\,$\mbox{]}, int \&cuantos)
+\begin{DoxyCompactList}\small\item\em devuelve las posiciones de los bits encendidos \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{DocumentaciÃ³n de los \textquotesingle{}typedefs\textquotesingle{}}
+\hypertarget{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}{}\index{bytaso@{bytaso}!byte@{byte}}
+\index{byte@{byte}!bytaso@{bytaso}}
+\subsubsection[{byte}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf bytaso\+::byte}}\label{namespacebytaso_a02813d6c4d42ce94319af7feabc46476}
+
+
+Un {\ttfamily byte} contiene el estado de 8 bits. 
+
+
+
+\subsection{DocumentaciÃ³n de las funciones}
+\hypertarget{namespacebytaso_a29bc6fb2d3ca8a24ee9a8fc044aed54a}{}\index{bytaso@{bytaso}!apagar@{apagar}}
+\index{apagar@{apagar}!bytaso@{bytaso}}
+\subsubsection[{apagar(byte \&b)}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::apagar (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} \&}]{b}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_a29bc6fb2d3ca8a24ee9a8fc044aed54a}
+
+
+apaga todos los bits 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere apagar completamente. \\
+\hline
+\end{DoxyParams}
+
+
+GrÃ¡fico de llamadas a esta funciÃ³n\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{namespacebytaso_a29bc6fb2d3ca8a24ee9a8fc044aed54a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespacebytaso_ae93ec524c1a740b4144a2ec249d07446}{}\index{bytaso@{bytaso}!asignar@{asignar}}
+\index{asignar@{asignar}!bytaso@{bytaso}}
+\subsubsection[{asignar(byte \&b, const bool v[])}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::asignar (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} \&}]{b, }
+\item[{const bool}]{v\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_ae93ec524c1a740b4144a2ec249d07446}
+
+
+enciende los bits según la configuración de {\ttfamily v} 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} sobre el que se quiere actuar \\
+\hline
+{\em v} & vector de 8 elementos que contiene la secuencia de bit\+S que se quieren asignar\\
+\hline
+\end{DoxyParams}
+Asigna a {\ttfamily b} la configuración de bits contenida en {\ttfamily v}. {\ttfamily v} es un vector de 8 booleanos donde {\ttfamily true} significa encendido y {\ttfamily false} significa apagado. \hypertarget{namespacebytaso_a01303edb3c075bbf9f10324914352a50}{}\index{bytaso@{bytaso}!byte\+To\+String@{byte\+To\+String}}
+\index{byte\+To\+String@{byte\+To\+String}!bytaso@{bytaso}}
+\subsubsection[{byte\+To\+String(byte b)}]{\setlength{\rightskip}{0pt plus 5cm}string bytaso\+::byte\+To\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf byte}}]{b}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_a01303edb3c075bbf9f10324914352a50}
+
+
+Muestra por la salida estándar una secuencia de 0s y 1s correspondiente al estado de cada bit. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere imprimir\\
+\hline
+\end{DoxyParams}
+Muestra por la salida estándar una secuencia de 0s y 1s correspondiente al estado de cada bit del byte donde un cero representa que un bit está apagado y un uno que el bit está encendido. Se implementa utilizando la función \char`\"{}get\char`\"{}.
+
+Por ejemplo, si en el {\ttfamily byte} {\ttfamily b} están encendidos los bits en posiciones 1 y 3 (0 más a la derecha), {\ttfamily print(b)}; mostrará {\ttfamily 00001010} \hypertarget{namespacebytaso_a5e016205a37415abe06efd845593bc2a}{}\index{bytaso@{bytaso}!encender@{encender}}
+\index{encender@{encender}!bytaso@{bytaso}}
+\subsubsection[{encender(byte \&b)}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::encender (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} \&}]{b}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_a5e016205a37415abe06efd845593bc2a}
+
+
+enciende todos los bits 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere encender completamente. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacebytaso_a76ad23326440e16a7b419ee7a14ee287}{}\index{bytaso@{bytaso}!encendidos@{encendidos}}
+\index{encendidos@{encendidos}!bytaso@{bytaso}}
+\subsubsection[{encendidos(byte b, int posic[], int \&cuantos)}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::encendidos (
+\begin{DoxyParamCaption}
+\item[{{\bf byte}}]{b, }
+\item[{int}]{posic\mbox{[}$\,$\mbox{]}, }
+\item[{int \&}]{cuantos}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_a76ad23326440e16a7b419ee7a14ee287}
+
+
+devuelve las posiciones de los bits encendidos 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere consultar \\
+\hline
+{\em posic} & vector de enteros (valores entre 0 a 7) que indican la posición de los bits de {\ttfamily b} que están encendidos \\
+\hline
+{\em cuantos} & número de bits encendidos en {\ttfamily b} (número de elementos usados en el vector {\ttfamily posic}) \\
+\hline
+\end{DoxyParams}
+
+
+GrÃ¡fico de llamadas para esta funciÃ³n\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{namespacebytaso_a76ad23326440e16a7b419ee7a14ee287_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespacebytaso_ad231ba96547f99130292527f5d65694b}{}\index{bytaso@{bytaso}!get@{get}}
+\index{get@{get}!bytaso@{bytaso}}
+\subsubsection[{get(byte b, int pos)}]{\setlength{\rightskip}{0pt plus 5cm}bool bytaso\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf byte}}]{b, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_ad231ba96547f99130292527f5d65694b}
+
+
+devuelve el estado del bit (encendido = true, apagado = false) en la posición {\ttfamily pos} 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere consultar \\
+\hline
+{\em pos} & el bit dentro de @ b que se quiere consultar (0 más a la derecha) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em true} & si el bit en la posición {\ttfamily pos} está encendido \\
+\hline
+{\em false} & si el bit en la posición {\ttfamily pos} está apagado \\
+\hline
+\end{DoxyRetVals}
+
+
+GrÃ¡fico de llamadas a esta funciÃ³n\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespacebytaso_ad231ba96547f99130292527f5d65694b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespacebytaso_a477a14f602dcc9264dbb6f874d170834}{}\index{bytaso@{bytaso}!off@{off}}
+\index{off@{off}!bytaso@{bytaso}}
+\subsubsection[{off(byte \&b, int pos)}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::off (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} \&}]{b, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_a477a14f602dcc9264dbb6f874d170834}
+
+
+apaga el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} cuyo bit se quiere desactivar \\
+\hline
+{\em pos} & el bit dentro de {\ttfamily b} que se quiere desactivar (0 más a la derecha) \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacebytaso_ae98a18093e63134e5f1ddec44973c6ec}{}\index{bytaso@{bytaso}!on@{on}}
+\index{on@{on}!bytaso@{bytaso}}
+\subsubsection[{on(byte \&b, int pos)}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::on (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} \&}]{b, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_ae98a18093e63134e5f1ddec44973c6ec}
+
+
+enciende el bit {\ttfamily pos} del {\ttfamily byte} {\ttfamily b} 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} cuyo bit se quiere activar \\
+\hline
+{\em pos} & el bit dentro de {\ttfamily b} que se quiere activar (0 más a la derecha) \\
+\hline
+\end{DoxyParams}
+
+
+GrÃ¡fico de llamadas a esta funciÃ³n\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespacebytaso_ae98a18093e63134e5f1ddec44973c6ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespacebytaso_aca892e499e255f8b8a967b67cd164a75}{}\index{bytaso@{bytaso}!volcar@{volcar}}
+\index{volcar@{volcar}!bytaso@{bytaso}}
+\subsubsection[{volcar(byte b, bool v[])}]{\setlength{\rightskip}{0pt plus 5cm}void bytaso\+::volcar (
+\begin{DoxyParamCaption}
+\item[{{\bf byte}}]{b, }
+\item[{bool}]{v\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{namespacebytaso_aca892e499e255f8b8a967b67cd164a75}
+
+
+recupera la configuración de todos los bit 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em b} & el {\ttfamily byte} que se quiere consultar \\
+\hline
+{\em v} & vector de 8 elementos que contendrá el estado de cada uno de los bits de @ b\\
+\hline
+\end{DoxyParams}
+Vuelca en {\ttfamily v} la configuración de bits contenida en {\ttfamily b}. {\ttfamily true} significa encendido y {\ttfamily false} significa apagado. El tamaño de {\ttfamily v} debe ser 8. 
+
+GrÃ¡fico de llamadas a esta funciÃ³n\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{namespacebytaso_aca892e499e255f8b8a967b67cd164a75_icgraph}
+\end{center}
+\end{figure}
+
+
